@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODOLIST</title>
+    <link rel="icon" href="./img/todolist.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kode+Mono:wght@400..700&family=Roboto:wght@100;300;400;500;700;900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+   
+        <section class="todo">
+
+            <center>
+                <div class="todo-general">
+                    <h2 class="todo-title">What`s up <input type="text" placeholder="name"></h2>
+                  <h3>CREATE A TODO</h3>
+                  <form class="todo-form">
+                    <p>What`s on your todo list?</p>
+        
+                    <input class="todo-input" type="text" name="content" id="content" placeholder="add task">
+                    <p>Pick a category</p>
+        
+                    <div class="category-general">
+                        <label class="category">
+                            <input type="radio" name="category" id="catOne" value="business">
+                            <div>Business</div>
+                        </label>
+                        <label class="category">
+                            <input type="radio" name="category" id="catTwo" value="personal">
+                            <div>Personal</div>
+                        </label>
+                    </div>
+        
+                    <button class="todo-btn">Add todo</button>
+                    <p class="todo-null">TODO-LIST Пустой!</p>
+
+                    <p class="todo-error">Такая задача уже есть!</p>
+                  </form>
+                  <ul class="todo-list">
+
+
+                    <li class="todo-item">
+
+                        <div class="todo-item-left">
+
+                            <input type="checkbox" class="todo_checked">
+                            <p class="todo-item_text">Text</p>
+                        </div>
+                        <div class="todo-item-right">
+                            <button class="todo-star">
+                                <!-- <ion-icon name="star"></ion-icon> -->
+                                eddit
+                            </button>
+                            <button class="todo-dell">
+                                <ion-icon name="trash"></ion-icon>
+                            </button>
+        
+                        </div>
+        
+                    </li>
+        
+                  </ul>
+        
+        
+                </div>
+            </center>
+        </section>
+    
+    
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

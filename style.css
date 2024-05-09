@@ -1,0 +1,137 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Josefin Sans", sans-serif;
+}
+button{
+    cursor: pointer;
+    border: none;
+}
+
+.todo{
+  
+    width: 100%;
+    height: 100vh;
+    background: rebeccapurple;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+  
+}
+.todo-general{
+    max-width: 700px;
+    width: 100%;
+    min-height: 600px;
+    background: white;
+   padding: 40px 0;
+    border-radius: 16px;
+
+}
+
+.todo-title{
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+    margin: 40px;
+}
+.todo-form{
+    position: relative;
+    width: 100%;
+    padding:20px 60px ;
+}
+.todo-form p{
+    text-align: start;
+    padding: 20px 0;
+    font-size: 15px;
+    font-weight: 700;
+}
+.category-general{
+  display: flex;
+ /* justify-content: space-around; */
+}
+.category-general label{
+    margin-left: 80px;
+    border-radius: 8px;
+    border: 2px solid blue;
+    width: 170px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.todo-input{
+    margin-right: 60px;
+    width: 100%;
+    max-width:400px ;
+    height: 40px;
+    padding: 0 15px;
+    border: 2px solid royalblue;
+    border-radius: 5px;
+    outline: none;
+    font-size: 20px;
+}
+.todo-btn{
+    margin-right: 40px;
+    width: 100%;
+    max-width: 450px;
+    height: 40px;
+    padding: 0 15px ;
+    color: white;
+    background: blue;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 20px;
+
+}
+.todo-item{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width:450px ;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 5px;
+    background-color:whitesmoke;
+   margin-left: 140px;
+   margin-top:50px ;
+  
+}
+.todo-error {
+    position: absolute;
+    bottom: -35px;
+    color: red;
+    font-size: 22px;
+    display: none;
+}
+.todo-null{
+    text-align: center;
+    position: absolute;
+    bottom: -35px;
+    font-weight: 700;
+    font-size: 22px;
+  
+}
+.todo-item-left,
+.todo-item-right{
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+}
+.todo-star,
+.todo-dell{
+    border-radius: 5px;
+    background: rebeccapurple;
+    padding: 5px 20px;
+    cursor: pointer;
+    color: white;
+    font-size: 23px;
+}
+.todo-item-text{
+    color: white;
+    font-size: 23px;
+}
+.todo-list{
+    display: flex;
+    flex-direction: column;
+}
