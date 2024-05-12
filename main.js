@@ -8,10 +8,12 @@ let tasks = [
     {
         id:2,
         text:"Title",
-        isDone:false,
+        isDone:true,
         isImportant:false,
     }
 ]
+
+
 
 
 const todoList =document.querySelector(".todo-list"),
@@ -30,11 +32,11 @@ const todoList =document.querySelector(".todo-list"),
             
             <li class="todo-item">
             <div class="todo-item-left">
-                <input type="checkbox" class="todo_checked">
-                <p class="todo-item_text">${el.text}</p>
+                <input ${el.isDone ? "checked" : ""} data-id="${el.id}" type="checkbox" class="todo-checked">
+                <p style="text-decoration-line: ${el.isDone ? "line-through": ""}" class="todo-item_text">${el.text}</p>
             </div>
             <div class="todo-item-right">
-                <button class="todo-star">
+                <button data-id="${el.id}" class="todo-star">
                     <!-- <ion-icon name="star"></ion-icon> -->
                     eddit
                 </button>
@@ -52,6 +54,69 @@ const todoList =document.querySelector(".todo-list"),
             todoNull.style.display ="block"
         }
 
+     
+
+        // const span = document.querySelector("span");
+        // const input =document.querySelector("input");
+
+        // input.type = 'checkbox';
+        // input.checked = todo.done;
+        // span.classList.add('bubble');
+        // if (todo.category == 'personal') {
+        //     span.classList.add('personal');
+        // } else {
+        //     span.classList.add('business');
+        // }
+        
+
+
+        const todoItemChecked = document.querySelectorAll('.todo-checked');
+        Array.from(todoItemChecked).forEach(item =>{
+            item.addEventListener("change",() =>{
+                tasks= tasks.map(el =>{
+                    if (el.id == item.dataset.id){
+                    return{...el,isDone:!el.isDone}
+                    }else{
+                        return el
+                    }
+                })
+                addItemTodoList()
+            
+            })
+           
+        })
+
+
+        // const todoItemEdit = document.querySelector(".todo-star");
+        // Array.from(todoItemEdit).forEach(item =>{
+        //     item.addEventListener('click',() =>{
+        //      const itemId = item.dataset.id;
+        //      const todoToEdit = tasks.find(tasks => tasks.id ===itemId);
+
+        //     })
+        //     addItemTodoList()
+        // })
+
+        const todoItemEdit = document.querySelectorAll('.todo-star');
+Array.from(todoItemEdit).forEach(item => {
+    item.addEventListener("click", () => {
+        const taskId = item.dataset.id;
+        const newText = prompt("Enter the new text for this task:");
+        if (newText !== null && newText.trim() !== "") {
+            tasks = tasks.map(el => {
+                if (el.id === parseInt(taskId)) {
+                    return { ...el, text: newText };
+                } else {
+                    return el;
+                }
+            });
+            addItemTodoList();
+        }
+    });
+});
+    
+               
+
         const todoItemDell =document.querySelectorAll('.todo-dell');
         Array.from(todoItemDell).forEach(item =>{
             item.addEventListener("click",() =>{
@@ -59,7 +124,7 @@ const todoList =document.querySelector(".todo-list"),
                     return el.id != item.dataset.id
                 })
                 addItemTodoList()
-                todoItemDell()
+            
 
             })
         })
@@ -94,6 +159,8 @@ const todoList =document.querySelector(".todo-list"),
             todoError.style.display ="none"
         }
       })
+
+   
 
     //   const addItemTodoList = () =>{
     //     todoList.innerHTML = ''
