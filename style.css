@@ -2,6 +2,8 @@
     --primary: #EA40A4;
     --business: #3a82ee;
     --personal: var(--primary);
+    --business-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
+    --personal-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
 }
 
 *{
@@ -55,10 +57,13 @@ button{
   display: flex;
  /* justify-content: space-around; */
 }
+input[type="radio"] {
+    display: none;
+}
 .category-general label{
     margin-left: 80px;
     border-radius: 8px;
-    border: 2px solid blue;
+    border: 2px solid gainsboro;
     width: 170px;
     height: 90px;
     display: flex;
@@ -66,13 +71,13 @@ button{
     justify-content: center;
     flex-direction: column;
 }
-.todo-input{
+.todo-input {
     margin-right: 60px;
     width: 100%;
     max-width:400px ;
     height: 40px;
     padding: 0 15px;
-    border: 2px solid royalblue;
+    border: 2px solid gainsboro;
     border-radius: 5px;
     outline: none;
     font-size: 20px;
@@ -96,10 +101,10 @@ button{
     width: 100%;
     max-width:450px ;
     height: 40px;
-    padding: 0 15px;
+    padding: 0 10px;
     border-radius: 5px;
     background-color:whitesmoke;
-   margin-left: 140px;
+   margin-left: 130px;
    margin-top:50px ;
   
 }
@@ -124,7 +129,7 @@ button{
     align-items: center;
     column-gap: 30px;
 }
-.todo-star,
+.todo-edit,
 .todo-dell{
     border-radius: 5px;
     background: rebeccapurple;
@@ -178,4 +183,13 @@ input:checked ~ .bubble::after {
     width: 10px;
     height: 10px;
     opacity: 1;
+}
+input:not([type="radio"]):not([type="checkbox"]) {
+    appearance: none;
+    border: none;
+    outline: none;
+    cursor: initial;
+}
+h2 ::placeholder{
+    font-size: 19px;
 }
